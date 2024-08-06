@@ -12,7 +12,7 @@ import {
 import {useEffect, useState} from 'react';
 import ImagePicker, {ImageOrVideo} from 'react-native-image-crop-picker';
 import {useDispatch, useSelector} from 'react-redux';
-import {loadUser, registerUser} from '../../redux/actions/userAction';
+import {loadUser, loginUser, registerUser} from '../../redux/actions/userAction';
 
 type Props = {
   navigation: any;
@@ -24,7 +24,8 @@ const SignupScreen = ({navigation}: Props) => {
   const [password, setPassword] = useState('');
   const [avatar, setAvatar] = useState('');
   const dispatch = useDispatch();
-  const {error, isAuthenticated} = useSelector((state: any) => state.user);
+  const { error, isAuthenticated } = useSelector((state: any) => state.user);
+  
 
   useEffect(() => {
     if (error) {

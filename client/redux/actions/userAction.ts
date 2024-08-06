@@ -19,7 +19,7 @@ export const registerUser =
         {name, email, password, avatar},
         config,
       );
-      console.log();
+      console.log(data);
       
       dispatch({
         type: 'userRegisterSuccess',
